@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edicao</title>
+</head>
+<body>
+    <div th:include="fragments/commons :: linkBootstrap"></div>
+    <div th:include="fragments/commons :: cabecalho"></div>
+    <h2 >Edicao de Eletrodomestico</h2>
+
+    <form method="post" th:object="${eletro}" th:action="@{/salvar}" enctype="multipart/form-data">
+        <input type="text" readonly name="id" th:field="*{id}"> <br />
+        Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
+        Marca: <input type="text" name="marca" th:field="*{marca}"> <br />
+        Cor: <input type="text" name="cor" th:field="*{cor}"> <br />
+        Preco: <input type="text" name="preco" th:field="*{preco}"> <br />
+        Potencia: <input type="text" name="potencia" th:field="*{potencia}"> <br />
+        Imagem: <input type="file" name="file"/><br />
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+<div th:include="fragments/commons :: rodape"></div>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adimin</title>
+</head>
+<body>
+    <div th:include="fragments/commons :: linkBootstrap"></div>
+    <div th:include="fragments/commons :: cabecalho"></div>
+    <h2>Lista de Eletrodomesticos</h2>
+    <a href="/cadastro">Cadastrar Eletrodomestico</a>
+    <br/>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>MARCA</th>
+          <th>COR</th>
+          <th>PRECO</th>
+          <th>POTENCIA</th>
+        </tr>
+        <tr th:each="eletro : ${eletros}">
+            <td th:text="${eletro.id}">ID</td>
+            <td th:text="${eletro.nome}">Genero</td>
+            <td th:text="${eletro.marca}">Titulo</td>
+            <td th:text="${eletro.cor}">Ano</td>
+            <td th:text="${eletro.preco}">Epis</td>
+            <td th:text="${eletro.potencia}">Classificacao</td>
+            <td><img width="100px" th:src="@{'/images/' + ${eletro.getImageUri()}}" alt="imagem"/></td>
+            <td><a th:href="@{'/deletar/' + ${eletro.id}}">Deletar </a></td>
+            <td><a th:href="@{'/editar/' + ${eletro.id}}">Editar </a></td>
+
+        </tr>
+    </table>
+</body>
+<div th:include="fragments/commons :: rodape"></div>
+</html>
