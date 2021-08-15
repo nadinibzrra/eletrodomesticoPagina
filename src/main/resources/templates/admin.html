@@ -7,31 +7,45 @@
 <body>
     <div th:include="fragments/commons :: linkBootstrap"></div>
     <div th:include="fragments/commons :: cabecalho"></div>
-    <h2>Lista de Eletrodomesticos</h2>
-    <a href="/cadastro">Cadastrar Eletrodomestico</a>
     <br/>
-    <table>
-        <tr>
-          <th>ID</th>
-          <th>NOME</th>
-          <th>MARCA</th>
-          <th>COR</th>
-          <th>PRECO</th>
-          <th>POTENCIA</th>
-        </tr>
-        <tr th:each="eletro : ${eletros}">
-            <td th:text="${eletro.id}">ID</td>
-            <td th:text="${eletro.nome}">Genero</td>
-            <td th:text="${eletro.marca}">Titulo</td>
-            <td th:text="${eletro.cor}">Ano</td>
-            <td th:text="${eletro.preco}">Epis</td>
-            <td th:text="${eletro.potencia}">Classificacao</td>
-            <td><img width="100px" th:src="@{'/images/' + ${eletro.getImageUri()}}" alt="imagem"/></td>
-            <td><a th:href="@{'/deletar/' + ${eletro.id}}">Deletar </a></td>
-            <td><a th:href="@{'/editar/' + ${eletro.id}}">Editar </a></td>
-
-        </tr>
-    </table>
+    <div class="container" style="background-color: #e3f2fd;">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+                <h1 class="fw-light">Lista de Eletrodomestico</h1>
+                <p class="lead">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOME</th>
+                                <th scope="col">MARCA</th>
+                                <th scope="col">COR</th>
+                                <th scope="col">PRECO</th>
+                                <th scope="col">POTENCIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="eletro : ${eletros}" scope="row">
+                                <td th:text="${eletro.id}">ID</td>
+                                <td th:text="${eletro.nome}">Genero</td>
+                                <td th:text="${eletro.marca}">Titulo</td>
+                                <td th:text="${eletro.cor}">Ano</td>
+                                <td th:text="${eletro.preco}">Epis</td>
+                                <td th:text="${eletro.potencia}">Classificacao</td>
+                                <td><img width="100px" th:src="@{'/images/' + ${eletro.getImageUri()}}" alt="imagem"/></td>
+                                <td><a th:href="@{'/deletar/' + ${eletro.id}}">Deletar </a></td>
+                                <td><a th:href="@{'/editar/' + ${eletro.id}}">Editar </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <p class="lead"></p>
+                <div style="height: 700px"></div>
+                <p class="lead mb-0">
+            </div>
+        </div>
+    </div>
 </body>
+<hr>
 <div th:include="fragments/commons :: rodape"></div>
 </html>

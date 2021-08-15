@@ -7,19 +7,30 @@
 <body>
     <div th:include="fragments/commons :: linkBootstrap"></div>
     <div th:include="fragments/commons :: cabecalho"></div>
-    <h2 >Cadastro de Eletrodomestico</h2>
-
-    <form method="post" th:object="${eletro}" th:action="@{/salvar}" enctype="multipart/form-data">
-
-        Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
-        <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
-        Marca: <input type="text" name="marca" th:field="*{marca}"> <br />
-        Cor: <input type="text" name="cor" th:field="*{cor}"> <br />
-        Preco: <input type="text" name="preco" th:field="*{preco}"> <br />
-        Potencia: <input type="text" name="potencia" th:field="*{potencia}"> <br />
-        Imagem: <input type="file" name="file"/><br />
-        <button type="submit">Enviar</button>
-    </form>
+    <br/>
+    <div class="container" style="background-color: #e3f2fd;">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+                <h1 class="fw-light">Cadastro de Eletrodomestico</h1>
+                <p class="lead">
+                <form method="post" th:object="${eletro}" th:action="@{/salvar}" enctype="multipart/form-data">
+                    Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
+                    <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+                    Marca: <input type="text" name="marca" th:field="*{marca}"> <br />
+                    Cor: <input type="text" name="cor" th:field="*{cor}"> <br />
+                    Preco: <input type="text" name="preco" th:field="*{preco}"> <br />
+                    Potencia: <input type="text" name="potencia" th:field="*{potencia}"> <br />
+                    Imagem: <input type="file" name="file"/><br />
+                    <button type="submit">Enviar</button>
+                </form>
+                </p>
+                <p class="lead"></p>
+                <div style="height: 700px"></div>
+                <p class="lead mb-0"></p>
+            </div>
+        </div>
+    </div>
 </body>
+<hr>
 <div th:include="fragments/commons :: rodape"></div>
 </html>
