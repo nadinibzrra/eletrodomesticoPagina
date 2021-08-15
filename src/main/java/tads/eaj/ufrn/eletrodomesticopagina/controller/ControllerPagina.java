@@ -49,7 +49,7 @@ public class ControllerPagina {
     @RequestMapping(value = "/salvar", method = RequestMethod.POST)
     public String doSalvar(@ModelAttribute @Valid Eletrodomestico eletro, Errors errors){
         if(errors.hasErrors()){
-            return "admin";
+            return "redirect:/cadastro" ;
         }else{
             service.save(eletro);
             return "redirect:/";

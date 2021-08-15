@@ -14,18 +14,18 @@
                 <h1 class="fw-light">Edicao de Eletrodomestico</h1>
                 <p class="lead">
                 <form method="post" th:object="${eletro}" th:action="@{/salvar}" enctype="multipart/form-data">
-                    <input type="text" readonly name="id" th:field="*{id}"> <br />
-                    Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
-                    Marca: <input type="text" name="marca" th:field="*{marca}"> <br />
-                    Cor: <input type="text" name="cor" th:field="*{cor}"> <br />
-                    Preco: <input type="text" name="preco" th:field="*{preco}"> <br />
-                    Potencia: <input type="text" name="potencia" th:field="*{potencia}"> <br />
+                    Id: <input class="form-control" type="text" readonly name="id" th:field="*{id}"> <br />
+                    Nome: <input class="form-control" type="text" name="nome" th:field="*{nome}"> <br />
+                    Marca: <input class="form-control" type="text" name="marca" th:field="*{marca}"> <br />
+                    Cor: <input class="form-control" type="text" name="cor" th:field="*{cor}"> <br />
+                    Preco: <input class="form-control" type="text" name="preco" th:field="*{preco}"> <br />
+                    Potencia: <input class="form-control" type="text" name="potencia" th:field="*{potencia}"> <br />
                     Imagem: <input type="file" name="file"/><br />
-                    <button type="submit">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
                 </p>
                 <p class="lead"></p>
-                <div style="height: 700px"></div>
+                <div style="height: 500px"></div>
                 <p class="lead mb-0"></p>
             </div>
         </div>
