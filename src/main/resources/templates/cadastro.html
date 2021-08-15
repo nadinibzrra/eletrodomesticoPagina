@@ -17,7 +17,9 @@
                     Nome: <input class="form-control" type="text" name="nome" th:field="*{nome}"> <br />
                     <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
                     Marca: <input class="form-control" type="text" name="marca" th:field="*{marca}"> <br />
+                    <p th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></p>
                     Cor: <input class="form-control" type="text" name="cor" th:field="*{cor}"> <br />
+                    <p th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"></p>
                     Preco: <input class="form-control" type="text" name="preco" th:field="*{preco}"> <br />
                     Potencia: <input class="form-control" type="text" name="potencia" th:field="*{potencia}"> <br />
                     Imagem: <input type="file" name="file"/><br />
